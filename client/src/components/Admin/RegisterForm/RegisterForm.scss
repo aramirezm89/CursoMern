@@ -1,0 +1,50 @@
+@import "../../../SCSS/index.scss";
+
+.register-form {
+  .ant-form-item {
+    &:nth-child(5),
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &-input {
+    .ant-input-prefix {
+      font-size: 0em +20px / $default-fontSize;
+    }
+    .ant-input {
+      font-size: 0em +20px / $default-fontSize;
+      padding: 10px 10px 10px 10px !important;
+      &:focus-visible {
+        background: transparent;
+      }
+    }
+  }
+
+  .ant-input-affix-wrapper {
+    &:focus,
+    &:focus-within,
+    &:hover {
+      border-color: $primary-color;
+      box-shadow: none;
+    }
+  }
+
+  &-button {
+    font-size: 0em + 20px / $default-fontSize;
+    height: 40px;
+    width: 100%;
+    background-color: $primary-color;
+    color: $font-light;
+    &:hover {
+      background-color: $primary-color-hover;
+      color: $font-light;
+    }
+    &:focus,
+    &:active {
+      background-color: $primary-color;
+      color: $font-light;
+      border: 0;
+    }
+  }
+}
