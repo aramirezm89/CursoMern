@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Checkbox, notification, Space } from "antd";
+import { Form, Input, Button, notification } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 import "./LoginForm.scss";
@@ -7,6 +7,7 @@ import {
   emailValidation,
   minLengthValidation,
 } from "../../../utils/formValidation";
+import { REFRESH_TOKEN, ACCESS_TOKEN } from "../../../utils/constants";
 import { signInApi } from "../../../api/user";
 
 export default function LoginForm() {
@@ -45,14 +46,21 @@ export default function LoginForm() {
   };
   const login = async () => {
     const result = await signInApi(input);
-    if (!result.ok) {
+
+    if (result.message) {
       notification["error"]({
         message: result.message,
       });
     } else {
+      const { accessToken, refreshToken } = result;
+      localStorage.setItem(ACCESS_TOKEN, accessToken);
+      localStorage.setItem(REFRESH_TOKEN, refreshToken);
+
       notification["success"]({
-        message: result.mesagge,
+        message: "Bienvenido ",
       });
+
+      window.location.href = "/admin";
     }
   };
   return (

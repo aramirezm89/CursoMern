@@ -1,4 +1,3 @@
-import { Result } from "antd";
 import { basePath, apiVersion } from "./config";
 
 export function loginApi(data) {
@@ -48,20 +47,60 @@ export function signInApi(data) {
       return response.json();
     })
     .then((result) => {
-      if (result.accessToken) {
-        return {
-          ok: true,
-          mesagge: result.message,
-        };
-      } else {
-        return {
-          ok: false,
-          message: result.message,
-        };
-      }
+      return result;
     })
 
     .catch((err) => {
       return err.message;
     });
 }
+
+
+export function getUsersApi(token){
+  const url =  `${basePath}/${apiVersion}/users`;
+  const params = {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: token
+    }
+
+  };
+
+  return fetch(url,params)
+        .then(response =>{
+          return response.json();
+        })
+        .then(result =>{
+          return result;
+        })
+        .catch(err =>{
+         return  err.message
+        })
+
+}
+
+export function getUsersActiveApi(token,status){
+  const url =  `${basePath}/${apiVersion}/users-active?active=${status}`;
+  const params = {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: token
+    }
+
+  };
+
+  return fetch(url,params)
+        .then(response =>{
+          return response.json();
+        })
+        .then(result =>{
+          return result;
+        })
+        .catch(err =>{
+         return  err.message
+        })
+
+}
+

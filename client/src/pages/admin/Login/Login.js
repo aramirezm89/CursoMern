@@ -4,12 +4,18 @@ import { Redirect } from "react-router-dom";
 import Logo from "../../../assets/images/png/LogoMenuTop.png";
 import ResgisterForm from "../../../components/Admin/RegisterForm";
 import LoginForm from "../../../components/Admin/LoginForm";
+import { getAccessTokenApi } from "../../../api/auth";
 
 import "./Login.scss";
 
 export default function Login() {
   const { Content } = Layout;
   const { TabPane } = Tabs;
+
+  if (getAccessTokenApi()) {
+    return <Redirect to="/admin" />;
+  }
+
   return (
     <Layout className="login">
       <Content className="login-content">

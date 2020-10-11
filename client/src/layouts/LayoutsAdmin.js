@@ -4,6 +4,7 @@ import { Layout } from "antd";
 import MenuTop from "../components/Admin/MenuTop";
 import MenuSider from "../components/Admin/MenuSider";
 import AdminLogin from "../pages/admin/Login";
+import useAuth from "../hooks/useAuth";
 
 import "./LayoutsAdmin.scss";
 
@@ -11,9 +12,9 @@ export default function LayoutAdmin(props) {
   const { routes } = props;
   const [menuCollapsed, setMenuCollapsed] = useState(false);
   const { Header, Content, Footer } = Layout;
+  const { user, isLoading } = useAuth();
 
-  const user = null;
-  if (!user) {
+  if (!user && !isLoading) {
     return (
       <>
         <Route path="/admin/login" component={AdminLogin} />
@@ -22,26 +23,29 @@ export default function LayoutAdmin(props) {
     );
   }
 
-  return (
-    <Layout>
-      <MenuSider menuCollapsed={menuCollapsed} />
-      <Layout
-        className="layout-admin"
-        style={{ marginLeft: menuCollapsed ? "80px" : "200px" }}
-      >
-        <Header className="layout-admin-header">
-          <MenuTop
-            menuCollapsed={menuCollapsed}
-            setMenuCollapsed={setMenuCollapsed}
-          />
-        </Header>
-        <Content className="layout-admin-content">
-          <LoadRoutes routes={routes} />
-        </Content>
-        <Footer className="layout-admin-footer">Antonio Ramirez</Footer>
+  if (user && !isLoading) {
+    return (
+      <Layout>
+        <MenuSider menuCollapsed={menuCollapsed} />
+        <Layout
+          className="layout-admin"
+          style={{ marginLeft: menuCollapsed ? "80px" : "200px" }}
+        >
+          <Header className="layout-admin-header">
+            <MenuTop
+              menuCollapsed={menuCollapsed}
+              setMenuCollapsed={setMenuCollapsed}
+            />
+          </Header>
+          <Content className="layout-admin-content">
+            <LoadRoutes routes={routes} />
+          </Content>
+          <Footer className="layout-admin-footer">Antonio Ramirez</Footer>
+        </Layout>
       </Layout>
-    </Layout>
-  );
+    );
+  }
+  return null;
 }
 
 function LoadRoutes(props) {

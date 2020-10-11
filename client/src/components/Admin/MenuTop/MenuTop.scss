@@ -6,7 +6,6 @@
   button {
     background-color: transparent;
     color: $font-light;
-    font-size: 16px;
 
     &:hover {
       color: $primary-color;
@@ -20,8 +19,9 @@
   &-left {
     &-logo {
       width: 150px;
-      height: 70px;
+      height: 95px;
       padding: 0 10px;
+      margin-top: -15px;
     }
   }
 
@@ -31,6 +31,19 @@
   }
 }
 
-.btn-shutdown :hover {
-  color: red;
+.anticon-menu-fold {
+  font-size: 23px;
+}
+.anticon-menu-unfold {
+  font-size: 23px;
+}
+
+.anticon-poweroff {
+  font-size: 20px;
+  :hover {
+    color: red;
+  }
+}
+.ant-btn-link {
+  margin-top: -20px;
 }

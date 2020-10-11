@@ -10,7 +10,7 @@ function createAccessToken(user) {
     email: user.email,
     role: user.role,
     createToken: moment().unix(),
-    expires: moment().add(3, "hours").unix(),
+    exp: moment().add(3, "hours").unix(),
   };
   return jwt.encode(payload, SECRET_KEY);
 }
@@ -18,7 +18,7 @@ function createAccessToken(user) {
 function createRefreshToken(user) {
   const payload = {
     id: user.id,
-    expires: moment().add(30, "days").unix(),
+    exp: moment().add(30, "days").unix(),
   };
   return jwt.encode(payload, SECRET_KEY);
 }
@@ -30,4 +30,5 @@ module.exports = {
   createAccessToken,
   createRefreshToken,
   decodedToken,
+  SECRET_KEY,
 };
