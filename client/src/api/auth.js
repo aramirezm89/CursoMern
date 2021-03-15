@@ -3,17 +3,27 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from "../utils/constants";
 import jwtDecode from "jwt-decode";
 
 export function getAccessTokenApi() {
+   
+  if(localStorage.getItem(ACCESS_TOKEN.value) ===  'null'){
+  
+    localStorage.removeItem(ACCESS_TOKEN)
+    localStorage.removeItem(REFRESH_TOKEN)
+  }else{
+
   const accessToken = localStorage.getItem(ACCESS_TOKEN);
 
-  if (!accessToken || accessToken == "null") {
-    return null;
+  if (!accessToken || accessToken === "null") {
+    return localStorage.removeItem(accessToken);
   }
-  return willExpireToken(accessToken) ? null  : accessToken;
+  return willExpireToken(accessToken) ? null: accessToken;
+  }
+  
+  
 }
 
 export function getRefreshTokenApi() {
   const refreshToken = localStorage.getItem(REFRESH_TOKEN);
-  if (!refreshToken || refreshToken == "null") {
+  if (!refreshToken || refreshToken === "null") {
     return null;
   }
 
@@ -44,7 +54,7 @@ export function refreshAcessTokenApi(refreshToken) {
     })
     .then((result) => {
       if (!result) {
-        logout();
+       
       } else {
         const { accessToken, refreshToken } = result;
         localStorage.setItem(ACCESS_TOKEN, accessToken);

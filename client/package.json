@@ -11,6 +11,8 @@
     "node": "^14.8.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-drag-sortable": "^1.0.6",
+    "react-dropzone": "^11.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "sass": "^1.26.10"

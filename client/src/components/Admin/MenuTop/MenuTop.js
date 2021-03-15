@@ -18,10 +18,10 @@ export default function (props) {
   };
 
   return (
-    <div className="menu-top">
-      <div className="menu-top-left">
+    <div className="menu-top-web">
+      <div className="menu-top-web-left">
         <a href="/admin">
-          <img className="menu-top-left-logo" src={Logo} alt="logo" />
+          <img className="menu-top-web-left-logo" src={Logo} alt="logo" />
         </a>
         <Link to="/admin" />
         <Button
@@ -36,7 +36,7 @@ export default function (props) {
           }
         ></Button>
       </div>
-      <div className="menu-top-right">
+      <div className="menu-top-web-right">
         <Button
           title="Salir"
           type="link"

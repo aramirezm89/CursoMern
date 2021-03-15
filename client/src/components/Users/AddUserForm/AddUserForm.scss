@@ -1,0 +1,21 @@
+.add-user-form {
+  .form-add {
+    text-align: center;
+    .ant-input {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .ant-form-item {
+      margin-top: 5px;
+      margin-bottom: 40px;
+    }
+    .anticon {
+      color: rgb(168, 171, 174);
+    }
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}

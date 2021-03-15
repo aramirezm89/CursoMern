@@ -1,13 +1,18 @@
 @import "../../../SCSS/index.scss";
 
 .list-users {
-  &-switch {
+  &-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
+    &-switch {
+      display: flex;
+      align-items: center;
 
-    button {
-      margin-right: 15px;
+      button {
+        margin-right: 15px;
+      }
     }
   }
 }
