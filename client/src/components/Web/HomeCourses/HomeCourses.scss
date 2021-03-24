@@ -1,0 +1,89 @@
+@import"../../../SCSS/index.scss";
+
+.home-courses{
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    &-title{
+        text-align: center;
+
+        h2{
+            color: $font-light;
+            font-weight: bold;
+            font-size: 32px;
+            text-transform: uppercase;
+        }  
+    }
+
+    .row-courses{
+        .ant-col{
+            padding: 10px !important;
+        }
+    }
+
+    &-card{
+        border: 0;
+        background-color: $backgrounnd-dark-light-web;
+        overflow: hidden; 
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75) ;
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75) ;
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75) ;
+        
+      .ant-card-body{
+          text-align: center;
+
+          .ant-card-meta-title,
+          .ant-card-meta-description{
+              color: $font-light;
+          }
+
+          .ant-card-meta-title{
+              font-weight: bold;
+          }
+
+         
+      }
+
+      .ant-card-actions{
+        background-color: transparent;
+        border:0;
+
+        .ant-btn{
+            background-color: transparent;
+             width: 90%;
+             height: 35px;
+            border-color: rgba(8, 0, 0, 0);
+            color: $font-light;
+            border:1px solid $primary-color;
+            
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.514);
+                color: $primary-color;
+              }
+  
+        }
+      }
+    }
+
+    &-more{
+        text-align: center;
+       
+        button{
+            background-color: $primary-color;
+            margin-top: 30px;
+            border: 0;
+            color: $font-light;
+            width: 200px;
+            height: 40px;
+            font-weight: bold;
+            font-size: 24px;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.514);
+                color: $primary-color;
+              }
+        }
+    }
+}
