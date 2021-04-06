@@ -1,0 +1,20 @@
+@import"../../../../SCSS/index.scss";
+
+.newsletter{
+    position: relative;
+
+    h3{
+        color: $font-light;
+        font-weight: bold;
+    }
+
+    input{
+        height: 40px;
+        font-size: 15px;
+    }
+
+   &-form-button{
+       width: 100%;
+       height: 40px;
+   }
+}

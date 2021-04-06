@@ -1,6 +1,6 @@
 const UserReviews = require("../models/userReviews")
 const {response} = require("express");
-const userReviews = require("../models/userReviews");
+
 
 function addReview(req, res){
     const userReview = new UserReviews();

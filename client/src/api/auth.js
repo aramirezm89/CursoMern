@@ -4,11 +4,6 @@ import jwtDecode from "jwt-decode";
 
 export function getAccessTokenApi() {
    
-  if(localStorage.getItem(ACCESS_TOKEN.value) ===  'null'){
-  
-    localStorage.removeItem(ACCESS_TOKEN)
-    localStorage.removeItem(REFRESH_TOKEN)
-  }else{
 
   const accessToken = localStorage.getItem(ACCESS_TOKEN);
 
@@ -16,7 +11,6 @@ export function getAccessTokenApi() {
     return localStorage.removeItem(accessToken);
   }
   return willExpireToken(accessToken) ? null: accessToken;
-  }
   
   
 }
