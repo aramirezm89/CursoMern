@@ -1,0 +1,59 @@
+@import "../../../../SCSS//index.scss";
+
+.courses-list{
+    margin-bottom: 50px;
+    &-course{
+       margin-bottom: 20px;
+       
+       .ant-card{
+           width: 95%;
+           min-height: 455px;
+           box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75) ;
+           -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75) ;
+           -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75) ;
+           border-radius: 10px;
+           border: 0;
+           background-color: transparent;
+
+           &-meta-title{
+               color: $font-light;
+               font-weight: bold;
+           }
+
+           &-meta-description{
+               color: $primary-color-dark
+           }
+
+           button{
+               width: 100%;
+               margin-top: 30px;
+               font-weight: bold;
+               background-color: $primary-color;
+               border-color: rgba(8, 0, 0, 0);
+               border:1px solid $primary-color;
+               text-transform: uppercase;
+               &:hover {
+                background-color: rgba(0, 0, 0, 0.514);
+                color: $primary-color;
+              }
+           }
+       }
+    
+      &-footer{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          span{
+              color: $font-light;
+              font-size: 16px;
+          }
+          .anticon{
+              color: rgba(255, 215, 0);
+          }
+      }
+    }
+
+
+}

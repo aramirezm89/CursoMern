@@ -2,9 +2,10 @@ import React,{useState,useEffect} from 'react';
 import {List,Button,Modal as ModalAntd,notification} from "antd";
 import {EditOutlined,DeleteOutlined} from "@ant-design/icons"
 import DragSortableList from "react-drag-sortable";
-import Modal from "../../../../Modal"
-import {getCourseDataUdemyApi,deleteCourseApi} from "../../../../api/course"
+import Modal from "../../../../Modal";
+import {getCourseDataUdemyApi,deleteCourseApi, updateCourseApi} from "../../../../api/course"
 import {getAccessTokenApi} from "../../../../api/auth";
+import AddEditCourseForm from "../AddEditCourseForm"
 
 import "./CoursesList.scss";
 
@@ -17,8 +18,31 @@ export default function CoursesList(props) {
     const [modalTitle, setModalTitle] = useState("");
     const [modalContent, setModalContent] = useState(null);
    
+    
+    useEffect(() => {
+        const listCoursesArray = [];
+        courses.forEach(courses =>{
+            listCoursesArray.push({
+                content:(
+                    <Course courses={courses} deleteCourse={deleteCourse} editCourseModal={editCourseModal} />
+                )
+            });
+            
+        })
+        setListCourses(listCoursesArray);
+    }, [courses]);
+
+    
     const onSort= (sortedList, dropEvent) =>{
-        console.log(sortedList);
+        const accesToken = getAccessTokenApi();
+        
+        sortedList.forEach(item =>{
+            const {_id} = item.content.props.courses;
+            const order = item.rank;
+            updateCourseApi(accesToken,_id,{order})
+            
+
+        })
     }
 
     const deleteCourse = courses =>{
@@ -47,25 +71,36 @@ export default function CoursesList(props) {
         })
     }
 
-    useEffect(() => {
-        const listCoursesArray = [];
-        courses.forEach(courses =>{
-            listCoursesArray.push({
-                content:(
-                    <Course courses={courses} deleteCourse={deleteCourse}/>
-                )
-            });
-            
-        })
-        setListCourses(listCoursesArray);
-    }, [courses]);
+    const  addCourseModal = () =>{
+        setIsVisibleModal(true);
+        setModalTitle("Creando nuevo curso.");
+        setModalContent(
+            <AddEditCourseForm 
+            setIsVisibleModal={setIsVisibleModal} 
+            setReloadCourses={setReloadCourses}
+            />
+        )
+    }
 
+    const  editCourseModal =  courses =>{
+        setIsVisibleModal(true);
+        setModalTitle("Actualizando curso.");
+        setModalContent(
+            <AddEditCourseForm 
+            setIsVisibleModal={setIsVisibleModal} 
+            setReloadCourses={setReloadCourses}
+            courses={courses}
+            />
+        )
+    }
+
+  
     return (
         <div className="courses-list">
             <div className="courses-list-header">
                 <Button 
                 type="primary" 
-                onClick={() => console.log("Creando curso...")}
+                onClick={addCourseModal}
                 >
                     Nuevo curso
                 </Button>
@@ -79,6 +114,14 @@ export default function CoursesList(props) {
                 )}
 
                 <DragSortableList items={listCourses} onSort={onSort} type="vertical"/>
+
+                <Modal
+                    title={modalTitle}
+                    isVisible = {isVisibleModal}
+                    setIsVisible = {setIsVisibleModal}
+                >
+                    {modalContent}
+                </Modal>
             </div>
         </div>
         
@@ -87,7 +130,7 @@ export default function CoursesList(props) {
 }
 
 function Course(props){
-    const {courses, deleteCourse} = props;
+    const {courses, deleteCourse, editCourseModal} = props;
     const [courseData, setCourseData] = useState(null);
 
     useEffect(() => {
@@ -110,7 +153,7 @@ function Course(props){
         actions={[
             <Button 
              type="primary"
-             onClick={() => console.log("Editar Curso.")}
+             onClick={() => editCourseModal(courses)}
             >
               <EditOutlined/>
             </Button>,

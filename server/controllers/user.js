@@ -201,7 +201,7 @@ function activateUser(req, res) {
 
   User.findOneAndUpdate({ _id: id }, { active }, (err, userStored) => {
     if (err) {
-      respose.status(500).send({
+      response.status(500).send({
         message: "Error del servidor.",
       });
     } else {

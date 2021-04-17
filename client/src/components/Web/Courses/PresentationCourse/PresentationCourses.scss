@@ -1,0 +1,21 @@
+@import "../../../../SCSS/index.scss";
+
+.presentation-courses{
+
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+
+    img{
+        width: 150px;
+    }
+
+    p{
+        margin-top: 40px;
+        color: $primary-color-dark;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    
+}

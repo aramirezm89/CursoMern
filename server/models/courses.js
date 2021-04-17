@@ -9,7 +9,7 @@ const courseSchema = Schema({
     },
     link:String,
     coupon:String,
-    price:Number,
+    price:String,
     order:Number
 
 })
