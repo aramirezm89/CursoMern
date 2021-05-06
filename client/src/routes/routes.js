@@ -12,7 +12,8 @@ import AdminBlog from "../pages/admin/Blog";
 //pages normal
 import Home from "../pages/Home";
 import Contact from "../pages/Contac";
-import Courses from "../pages/Courses"
+import Courses from "../pages/Courses";
+import Blog from "../pages/Blog";
 //pages error404
 import Error404 from "../pages/Error404";
 
@@ -75,6 +76,16 @@ const routes = [
       {
         path:"/courses",
         component:Courses,
+        exact: true
+      },
+      {
+        path:"/blog",
+        component:Blog,
+        exact: true
+      },
+      {
+        path:"/blog/:url",
+        component:Blog,
         exact: true
       },
       {

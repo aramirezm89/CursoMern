@@ -38,7 +38,7 @@ function getCourses(req,res){
 function deleteCourse(req,res){
      const {id} = req.params;
      
-     Course.findByIdAndRemove(id,(err,courseDeleted) =>{
+     Course.findByIdAndRemove({_id:id},(err,courseDeleted) =>{
          if(err){
              res.status(500).send({code:500,message:"Error del servidor."});
          }else{

@@ -1,4 +1,4 @@
-const { findByIdAndUpdate } = require("../models/post");
+
 const Post = require("../models/post");
 
 function addPost(req,res){
@@ -19,7 +19,7 @@ function addPost(req,res){
 }
 
 function getPosts(req,res){
-    const {page = 1,limit = 10} = req.query;
+    const {page = 1,limit = 8} = req.query;
     const options = {
         page: page,
         limit:   parseInt(limit),
@@ -43,7 +43,7 @@ function updatePost(req,res){
     const postData = req.body;
     const {id} = req.params;
     
-    Post.findByIdAndUpdate(id,postData,(err,postUpdate) =>{
+    Post.findByIdAndUpdate({_id:id},postData,(err,postUpdate) =>{
         if(err){
             res.status(500).send({code:500,message:"Error del servidor."})
         }else{
@@ -59,7 +59,7 @@ function updatePost(req,res){
 function deletePost(req,res){
     const {id} = req.params;
 
-    Post.findOneAndRemove(id, (err, postDeleted)=>{
+    Post.findOneAndRemove({_id:id}, (err, postDeleted)=>{
         if(err){
             res.status(500).send({code:500, message:"EL post ha sido eliminado con exito."})
         }else{
