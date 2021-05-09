@@ -40,6 +40,10 @@ export default function PostListWeb(props) {
         <>
           <Helmet>
               <title>Blog de programación | Antonio Ramirez Monsalve</title>
+              <meta name="description" 
+                    content="PostsList | Web de programación de Antonio Ramirez Monsalve" 
+                    data-react-helmet="true"
+               />
           </Helmet>
             <div className="posts-list-web">
                 <h1>Blog</h1>

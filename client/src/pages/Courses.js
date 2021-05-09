@@ -27,6 +27,10 @@ export default function Courses() {
        <> 
           <Helmet>
               <title>Cursos | Antonio Ramirez Monsalve </title>
+              <meta name="description" 
+                 content="Cursos | Web de Antonio Ramirez Monsalve" 
+                 data-react-helmet="true"
+               />
           </Helmet>
             <Row>
                 <Col md={4} />

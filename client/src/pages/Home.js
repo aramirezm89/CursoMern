@@ -9,6 +9,10 @@ export default function Home() {
    <>
         <Helmet>
            <title>Antonio Ramirez Monsalve</title>
+           <meta name="description" 
+                 content="Home | Web de programación" 
+                 data-react-helmet="true"
+           />
         </Helmet>
         <MainBanner/>
         <HomeCourses />

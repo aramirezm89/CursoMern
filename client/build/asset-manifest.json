@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.72c4c624.chunk.css",
+    "main.js": "/static/js/main.41d8c675.chunk.js",
+    "main.js.map": "/static/js/main.41d8c675.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.53e45857.js",
+    "runtime-main.js.map": "/static/js/runtime-main.53e45857.js.map",
+    "static/css/2.cc6263b3.chunk.css": "/static/css/2.cc6263b3.chunk.css",
+    "static/js/2.9338fc82.chunk.js": "/static/js/2.9338fc82.chunk.js",
+    "static/js/2.9338fc82.chunk.js.map": "/static/js/2.9338fc82.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f935626724cad39f4cfa50502d7bef2b.js": "/precache-manifest.f935626724cad39f4cfa50502d7bef2b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.cc6263b3.chunk.css.map": "/static/css/2.cc6263b3.chunk.css.map",
+    "static/css/main.72c4c624.chunk.css.map": "/static/css/main.72c4c624.chunk.css.map",
+    "static/js/2.9338fc82.chunk.js.LICENSE.txt": "/static/js/2.9338fc82.chunk.js.LICENSE.txt",
+    "static/media/17.1 academy-logo.png": "/static/media/17.1 academy-logo.620c02b9.png",
+    "static/media/21.1 facebook.7dbf4ce8.svg": "/static/media/21.1 facebook.7dbf4ce8.svg",
+    "static/media/21.2 youtube.ceddbee1.svg": "/static/media/21.2 youtube.ceddbee1.svg",
+    "static/media/21.3 linkedin.27e7335c.svg": "/static/media/21.3 linkedin.27e7335c.svg",
+    "static/media/21.4 twitter.2dedd499.svg": "/static/media/21.4 twitter.2dedd499.svg",
+    "static/media/css-grid.jpg": "/static/media/css-grid.5d188bd4.jpg",
+    "static/media/MainBanner.scss": "/static/media/home-v1.d8778e97.jpg",
+    "static/media/javascript-es6.jpg": "/static/media/javascript-es6.26c0437b.jpg",
+    "static/media/Login.scss": "/static/media/new-fondo1lateral-768x576.978e359b.jpg",
+    "static/media/prestashop-1-7.jpg": "/static/media/prestashop-1-7.0b68c9e0.jpg",
+    "static/media/react-js-hooks.jpg": "/static/media/react-js-hooks.423a3c28.jpg",
+    "static/media/react-native.jpg": "/static/media/react-native.99cbeed9.jpg",
+    "static/media/wordpress.jpg": "/static/media/wordpress.be7be3ca.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53e45857.js",
+    "static/css/2.cc6263b3.chunk.css",
+    "static/js/2.9338fc82.chunk.js",
+    "static/css/main.72c4c624.chunk.css",
+    "static/js/main.41d8c675.chunk.js"
+  ]
+}
