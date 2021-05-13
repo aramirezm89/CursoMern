@@ -8,5 +8,4 @@ module.exports = {
   IP_SERVER,
   PORT_DB,
   PORT_SERVER,
-  PORT_DB,
 };
